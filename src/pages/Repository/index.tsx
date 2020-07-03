@@ -1,12 +1,18 @@
 import React from 'react'
+import {useRouteMatch} from 'react-router-dom'
 
-const Dashboard = () => {
+interface RepositoryParams {
+  repository: string
+}
+
+const Repository = () => {
+  const {params} = useRouteMatch<RepositoryParams>()
   return (
     <div>
-      <h1>Repository</h1>
+      <h1>Repository: {params.repository}</h1>
     </div>
   )
 }
 
-export default Dashboard
+export default Repository
 
